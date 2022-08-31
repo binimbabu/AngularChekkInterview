@@ -1,0 +1,20 @@
+<div class="page">
+    <div class="navbar" [@sideMenuAnime]='openClose'>
+        <button (click)="hideAndShow()"><i class="material-icons">menu</i></button>
+        <div class="list-items">  
+         <div *ngIf="openClose === 'open'" class="list-item" (click)="navigate('dashboard')">
+            <i class="material-icons">browse_gallery</i>
+            Dashboard
+           
+         </div>
+         <div *ngIf="openClose === 'open'" class="list-item" (click)="navigate('table')">
+            <i class="material-icons">data_thresholding</i>
+            Table
+         </div>
+         <div *ngIf="openClose === 'open'" class="list-item" (click)="navigate('directive')">
+            <i class="material-icons">data_thresholding</i>
+            Directive
+         </div>
+        </div>
+    </div>
+</div>

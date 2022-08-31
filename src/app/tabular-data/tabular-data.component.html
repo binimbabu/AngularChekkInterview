@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+ <div style="margin-left: 18%;">
+   <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+   <mat-table id="table" [dataSource]="dataSource" matSort class="tablsty buttonclr" matSortDirection="asc" matSortDisableClear="true" matSortActive="content" (matSortChange)="sortData($event)">
+    <ng-container id="typeColumn" matColumnDef="type">
+    <mat-header-cell id="tableHeaderType" *matHeaderCellDef mat-sort-header="attributes.display_properties.type"> <span id="typeText">Type</span> </mat-header-cell>
+    <mat-cell id="typeCell" *matCellDef="let element">
+    <span class="elipss" id="typeElement" >{{element.attributes.display_properties.type}}</span>
+    </mat-cell>
+    </ng-container>
+    <ng-container id="contentColumn" matColumnDef="content">
+    <mat-header-cell id="tableHeaderContent" *matHeaderCellDef mat-sort-header> <span id="contentText" >Content</span> </mat-header-cell>
+    <mat-cell id="contentCell" *matCellDef="let element">
+    <span class="elipss" id="contentElement" >{{element.attributes.content}}</span>
+    </mat-cell>
+    </ng-container>
+
+    <ng-container id="imageColumn" matColumnDef="image">
+    <mat-header-cell id="tableHeaderImage" *matHeaderCellDef mat-sort-header> <span id="imageText" >Image</span> </mat-header-cell>
+    <mat-cell id="imageCell" *matCellDef="let element">
+    <img src={{element.attributes.display_properties.image}} width="100" height="100"/>
+    </mat-cell>
+    </ng-container>
+
+    <ng-container id="authorsColumn" matColumnDef="authors">
+    <mat-header-cell id="tableHeaderAuthors" *matHeaderCellDef mat-sort-header> <span id="authorsText" >Authors</span> </mat-header-cell>
+    <mat-cell id="authorsCell" *matCellDef="let element">
+    <span class="elipss" id="authorsElement" >{{element.relationships.authors.links.self}}</span>
+    </mat-cell>
+    </ng-container>
+
+    <mat-header-row id="tableHeaderRow" *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;let i=index"></mat-row>
+    </mat-table>
+    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+ </div>

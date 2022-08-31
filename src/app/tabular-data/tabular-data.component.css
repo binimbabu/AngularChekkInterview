@@ -1,0 +1,54 @@
+mat-row:hover {
+    color: #01579B;
+    background-color: #B3E5FC;
+    -moz-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    }
+    .example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    }
+    .mat-elevation-z8 {
+    border-radius: 10px;
+    }
+    .mat-table {
+    overflow: auto;
+    max-height: 650px;
+    }
+
+.tablsty ::ng-deep .mat-row:nth-child(even){
+        background-color:#ffff;
+}
+.tablsty ::ng-deep .mat-row:nth-child(odd){
+        background-color:#f9f9f9;
+}
+.tablsty ::ng-deep .mat-row{
+        border-bottom-width: 0px;
+}
+
+.buttonclr ::ng-deep .mat-raised-button.mat-primary{
+background-color: #46c98b;
+font-size: 16px;
+    font-family: opensans-light, sans-serif, FontAwesome !important;
+    }
+.table {
+        width: 98%;
+        margin: 0 0 0 16px;
+        }  
+        
+        .elipss{
+            overflow: hidden;
+            white-space: nowrap;
+            width: 180px;
+            display: inline-block;
+            text-overflow: ellipsis;
+            }
+            .mobile-label {
+                width: 100px !important;
+                display: inline-block !important;
+                font-weight: bold !important;
+                font-size: 12px !important;
+                }       

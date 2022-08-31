@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+
+<div style="margin-left:30%">
+    <h1>Directive</h1>
+    <p>Please enter the input and hover over the custom text generated automatically</p>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Please enter the input">
+     <br/><br/>
+     <div class="para float-left" appMyHighlight [backgroundColor]="'black'" [foregroundColor]="'white'" [hoverBackgroundColor]="'yellow'"
+[hoverForegroundColor]="'red'">{{filterValue}}</div>
+     </div>

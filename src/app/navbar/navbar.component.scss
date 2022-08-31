@@ -1,0 +1,49 @@
+.page{
+  height: 100%;
+  position: absolute;
+//   background: rgb(35, 42,58);
+}
+.navbar{
+    height: 100%;
+    width: 200px;
+    background: rgb(35, 42,58);
+}
+
+.list-items{
+    padding-top: 100px;
+}
+
+.list-item{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.list-item i.material-icons{
+    margin-right: 12px;
+}
+
+.list-item:hover{
+    color: orange;
+}
+
+.list-item::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    left: 0;
+    background-color: orange;
+    transform: scaleY(0);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.list-item:hover::before{
+    opacity: 1;
+    transform: scaleY(1);
+}
