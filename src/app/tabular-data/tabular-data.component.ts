@@ -61,12 +61,8 @@ export class TabularDataComponent implements OnInit, AfterViewInit {
       switch (sort.active) {
         case 'content':
           return this.compare(a.attributes.content, b.attributes.content, isAsc);
-        case 'calories':
-          return this.compare(a.calories, b.calories, isAsc);
-          case 'carbs':
-          return this.compare(a.carbs, b.carbs, isAsc);
-        case 'protein':
-          return this.compare(a.protein, b.protein, isAsc);
+        case 'type':
+          return this.compare(a.attributes.display_properties.type, b.attributes.display_properties.type, isAsc);
         default:
           return 0;
       }
