@@ -11,11 +11,12 @@ import { MatTableFilter } from 'mat-table-filter';
   styleUrls: ['./tabular-data.component.css']
 })
 export class TabularDataComponent implements OnInit, AfterViewInit {
-  displayedColumns = ["type", "content", "image", "authors"];
+  displayedColumns = ["type", "content","address",  "authors"];
   products: any = [];
   tabData:any=[];
   tabularData:any=[];
   value:any;
+  redBoolean:boolean=false;
   filterEntity: any;
   filterType: MatTableFilter;
   dataSource: MatTableDataSource<any>;
@@ -28,7 +29,15 @@ export class TabularDataComponent implements OnInit, AfterViewInit {
     this.httpClient.get("assets/example.json").subscribe(data =>{
       this.products = data;
       this.tabData = this.products.data;
-      this.tabularData = this.tabData
+      this.tabularData = this.tabData;
+      this.tabularData.forEach( (value:any)=> {
+        if(value.wishes === 'Good'){
+          this.redBoolean = true;
+        }
+        else{
+          this.redBoolean = false;
+        }
+      }); 
       this.dataSource = new MatTableDataSource(this.tabData); 
       
      

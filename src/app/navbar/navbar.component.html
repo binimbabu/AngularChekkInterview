@@ -1,19 +1,21 @@
 <div class="page">
     <div class="navbar" [@sideMenuAnime]='openClose'>
-        <button (click)="hideAndShow()"><i class="material-icons">menu</i></button>
+        <button (click)="hideAndShow()" class="hide"><i class="material-icons">menu</i></button>
+        <br/><br/><br/>
+        <br/><img src="../assets/santa.png" alt="cinque terre" height="70" width="70"/> 
         <div class="list-items">  
          <div *ngIf="openClose === 'open'" class="list-item" (click)="navigate('dashboard')">
             <i class="material-icons">browse_gallery</i>
-            Dashboard
+           <p>Toys Factory</p>
            
          </div>
          <div *ngIf="openClose === 'open'" class="list-item" (click)="navigate('table')">
             <i class="material-icons">data_thresholding</i>
-            Table
+            Delivery List
          </div>
          <div *ngIf="openClose === 'open'" class="list-item" (click)="navigate('directive')">
             <i class="material-icons">data_thresholding</i>
-            Directive
+            Legal
          </div>
         </div>
     </div>

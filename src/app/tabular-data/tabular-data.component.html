@@ -1,32 +1,33 @@
 <app-navbar></app-navbar>
 
- <div style="margin-left: 18%;">
-   <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+ <div style="margin-left: 16%;" class="example-container mat-elevation-z8">
+  <h2 class="deliveryHeading">Delivery List</h2>
+  <img class="pine" src="../assets/pine.jpeg" alt="cinque terre" height="70" width="70"/> 
    <mat-table id="table" [dataSource]="dataSource" matSort class="tablsty buttonclr" matSortDirection="asc" matSortDisableClear="true" matSortActive="content" (matSortChange)="sortData($event)">
     <ng-container id="typeColumn" matColumnDef="type">
-    <mat-header-cell id="tableHeaderType" *matHeaderCellDef mat-sort-header="attributes.display_properties.type"> <span id="typeText">Type</span> </mat-header-cell>
+    <mat-header-cell id="tableHeaderType" *matHeaderCellDef mat-sort-header="attributes.display_properties.type"> <span id="typeText">First Name</span> </mat-header-cell>
     <mat-cell id="typeCell" *matCellDef="let element">
-    <span class="elipss" id="typeElement" >{{element.attributes.display_properties.type}}</span>
+    <span class="elipss" id="typeElement" >{{element.firstName}}</span>
     </mat-cell>
     </ng-container>
     <ng-container id="contentColumn" matColumnDef="content">
-    <mat-header-cell id="tableHeaderContent" *matHeaderCellDef mat-sort-header> <span id="contentText" >Content</span> </mat-header-cell>
+    <mat-header-cell id="tableHeaderContent" *matHeaderCellDef> <span id="contentText" >Last Name</span> </mat-header-cell>
     <mat-cell id="contentCell" *matCellDef="let element">
-    <span class="elipss" id="contentElement" >{{element.attributes.content}}</span>
+    <span class="elipss" id="contentElement" >{{element.lastName}}</span>
     </mat-cell>
     </ng-container>
 
-    <ng-container id="imageColumn" matColumnDef="image">
-    <mat-header-cell id="tableHeaderImage" *matHeaderCellDef mat-sort-header> <span id="imageText" >Image</span> </mat-header-cell>
-    <mat-cell id="imageCell" *matCellDef="let element">
-    <img src={{element.attributes.display_properties.image}} width="100" height="100"/>
-    </mat-cell>
-    </ng-container>
+    <ng-container id="contentColumn" matColumnDef="address">
+      <mat-header-cell id="tableHeaderContent" *matHeaderCellDef mat-sort-header> <span id="contentText" >Address</span> </mat-header-cell>
+      <mat-cell id="contentCell" *matCellDef="let element">
+      <span class="elipss" id="contentElement" >{{element.address}}</span>
+      </mat-cell>
+      </ng-container>
 
     <ng-container id="authorsColumn" matColumnDef="authors">
-    <mat-header-cell id="tableHeaderAuthors" *matHeaderCellDef mat-sort-header> <span id="authorsText" >Authors</span> </mat-header-cell>
+    <mat-header-cell id="tableHeaderAuthors" *matHeaderCellDef mat-sort-header> <span id="authorsText" >Wishes</span> </mat-header-cell>
     <mat-cell id="authorsCell" *matCellDef="let element">
-    <span class="elipss" id="authorsElement" >{{element.relationships.authors.links.self}}</span>
+    <span class="elipss" id="authorsElement" >{{element.wishes}}</span>
     </mat-cell>
     </ng-container>
 
